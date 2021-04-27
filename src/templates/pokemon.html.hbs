@@ -1,0 +1,59 @@
+{{#> layout title=title}}
+<h1>{{title}}</h1>
+<a href="..">Back</a>
+<section>
+  <h2>General</h2>
+  <ul>
+    <li>Usage Rate: {{divide (floor (multiply 10000 (divide stats.usage totalTeams))) 100}}%</li>
+    <li>Win Rate: {{divide (floor (multiply 10000 (divide stats.win stats.usage))) 100}}%</li>
+  </ul>
+</section>
+<section>
+  <h2>Teammates</h2>
+  <ul>
+    {{#each stats.partner}}
+    <li><a href="{{this.name}}.html">{{this.name}}</a> (Usage: {{divide (floor (multiply 10000 (divide this.stats.usage ../stats.usage))) 100}}%, WR: {{divide (floor (multiply 10000 (divide this.stats.win this.stats.usage))) 100}}%)</li>
+    {{/each}}
+  </ul>
+</section>
+<section>
+  <h2>Foes</h2>
+  <ul>
+    {{#each stats.against}}
+    <li><a href="{{this.name}}.html">{{this.name}}</a> (Usage: {{divide (floor (multiply 10000 (divide this.stats.usage ../stats.usage))) 100}}%, WR: {{divide (floor (multiply 10000 (divide this.stats.win this.stats.usage))) 100}}%)</li>
+    {{/each}}
+  </ul>
+</section>
+<section>
+  <h2>Items</h2>
+  <ul>
+    {{#each stats.item}}
+    <li>{{this.name}} (Usage: {{divide (floor (multiply 10000 (divide this.stats.usage ../stats.usage))) 100}}%, WR: {{divide (floor (multiply 10000 (divide this.stats.win this.stats.usage))) 100}}%)</li>
+    {{/each}}
+  </ul>
+</section>
+<section>
+  <h2>Abilities</h2>
+  <ul>
+    {{#each stats.ability}}
+    <li>{{this.name}} (Usage: {{divide (floor (multiply 10000 (divide this.stats.usage ../stats.usage))) 100}}%, WR: {{divide (floor (multiply 10000 (divide this.stats.win this.stats.usage))) 100}}%)</li>
+    {{/each}}
+  </ul>
+</section>
+<section>
+  <h2>Natures</h2>
+  <ul>
+    {{#each stats.nature}}
+    <li>{{this.name}} (Usage: {{divide (floor (multiply 10000 (divide this.stats.usage ../stats.usage))) 100}}%, WR: {{divide (floor (multiply 10000 (divide this.stats.win this.stats.usage))) 100}}%)</li>
+    {{/each}}
+  </ul>
+</section>
+<section>
+  <h2>Moves</h2>
+  <ul>
+    {{#each stats.move}}
+    <li>{{this.name}} (Usage: {{divide (floor (multiply 10000 (divide this.stats.usage ../stats.usage))) 100}}%, WR: {{divide (floor (multiply 10000 (divide this.stats.win this.stats.usage))) 100}}%)</li>
+    {{/each}}
+  </ul>
+</section>
+{{/layout}}

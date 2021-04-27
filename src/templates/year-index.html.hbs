@@ -1,0 +1,12 @@
+{{#> layout title=title}}
+<h1>{{title}}</h1>
+<a href="..">Back</a>
+<section>
+  <h2>Months</h2>
+  <ul>
+  {{#each months}}
+    <li><a href="{{this}}">{{../year}}/{{this}}</a></li>
+  {{/each}}
+  </ul>
+</section>
+{{/layout}}

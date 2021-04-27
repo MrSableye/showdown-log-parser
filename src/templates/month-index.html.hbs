@@ -1,0 +1,24 @@
+{{#> layout title=title}}
+<h1>{{title}}</h1>
+<a href="..">Back</a>
+<section>
+  <h2>Daily Stats</h2>
+  <ul>
+    {{#each days}}
+    <li>
+      <a href="{{this}}">{{../year}}/{{../month}}/{{this}}</a>
+    </li>
+    {{/each}}
+  </ul>
+</section>
+<section>
+  <h2>Individual Stats</h2>
+  <ul>
+    {{#each pokemonEntries}}
+    <li>
+      <a href="{{this.name}}.html">{{this.name}}</a> (Usage: {{divide (floor (multiply 10000 (divide this.stats.usage ../totalTeams))) 100}}%, WR: {{divide (floor (multiply 10000 (divide this.stats.win this.stats.usage))) 100}}%)
+    </li>
+    {{/each}}
+  </ul>
+</section>
+{{/layout}}

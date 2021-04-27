@@ -1,0 +1,11 @@
+{{#> layout title=title}}
+<h1>{{title}}</h1>
+<section>
+  <h2>Formats</h2>
+  <ul>
+  {{#each formats}}
+  <li><a href="{{this}}">{{this}}</a></li>
+  {{/each}}
+  </ul>
+</section>
+{{/layout}}
